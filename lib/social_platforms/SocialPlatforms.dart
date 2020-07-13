@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'facebook/Facebook.dart';
+
 class SocialPlatforms extends StatefulWidget {
   @override
   _SocialPlatformsState createState() => _SocialPlatformsState();
@@ -46,7 +48,10 @@ class _SocialPlatformsState extends State<SocialPlatforms> {
                     'Facebook',
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => Facebook_Login()));
+                },
               ),
             ),
             Padding(
