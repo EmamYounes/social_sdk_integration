@@ -19,6 +19,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_zoom_plugin:
+    git:
+      url: git://github.com/decodedhealth/flutter_zoom_plugin.git
+      ref: 0.0.7
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

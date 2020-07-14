@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:social_sdk_integration/zoom/JoinWidget.dart';
 
 void main() => runApp(MyApp());
 
@@ -25,7 +26,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,7 +66,15 @@ class _MyHomePageState extends State<MyHomePage> {
                     'Edu session',
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return JoinWidget();
+                      },
+                    ),
+                  );
+                },
               ),
             ),
           ],
