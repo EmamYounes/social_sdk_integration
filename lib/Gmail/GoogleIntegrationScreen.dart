@@ -8,7 +8,7 @@ import 'GoogleModue.dart';
 
 
 class GoogleIntegrationScreen extends StatelessWidget {
-
+  bool LoggedIn=false;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -58,9 +58,9 @@ class _SignInDemoState extends State<SignInDemo> {
   }
 
   GoogleSignInAccount _currentUser;
-
+bool LoggedIn=false;
   _buildBody() {
-    if (_currentUser != null) {
+    if (LoggedIn ) {
       return Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -98,6 +98,9 @@ class _SignInDemoState extends State<SignInDemo> {
   _handleSignOut()async {
     try {
       _currentUser = await GoogleModule.signOutFromGmail();
+      setState(() {
+        LoggedIn=false;
+      });
     } catch (err) {
       print(err);
     }
@@ -106,6 +109,7 @@ class _SignInDemoState extends State<SignInDemo> {
   Future<void> _handleSignIn() async {
     try {
       _currentUser = await GoogleModule.signInWithGmail();
+      LoggedIn=true;
     } catch (err) {
       print(err);
     }
