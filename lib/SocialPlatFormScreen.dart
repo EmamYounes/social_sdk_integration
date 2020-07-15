@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'GoogleIntegrationScreen.dart';
+import 'Gmail/GoogleIntegrationScreen.dart';
+import 'Gmail/GooglePreview.dart';
+
 
 class SocialPlatFormScreen extends StatefulWidget {
   @override
@@ -11,32 +13,38 @@ class _SocialPlatFormScreenState extends State<SocialPlatFormScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.green,
       body: Container(
-        child: Column(
-          children: <Widget>[
-            RaisedButton(
-              child: Text(' Google '),
-              onPressed: (){
-                Navigator.pushReplacement(context, MaterialPageRoute(
-                  builder: (context) => GoogleIntegrationScreen()
-                ));
-              },
-            ),
-            RaisedButton(
-              child: Text(''),
-              onPressed: (){},
-            ),
-            RaisedButton(
-              child: Text(''),
-              onPressed: (){},
-            ),
-            RaisedButton(
-              child: Text(''),
-              onPressed: (){},
-            ),
-          ],
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              RaisedButton(
+                child: Text(' Google '),
+                onPressed: (){
+                  Navigator.pushReplacement(context, MaterialPageRoute(
+                    builder: (context) => GooglePreview()
+                  ));
+                },
+              ),
+              RaisedButton(
+                child: Text(''),
+                onPressed: (){},
+              ),
+              RaisedButton(
+                child: Text(''),
+                onPressed: (){},
+              ),
+              RaisedButton(
+                child: Text(''),
+                onPressed: (){},
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
 }
+
