@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:social_sdk_integration/twitter.dart';
 
 void main() => runApp(MyApp());
 
@@ -50,7 +51,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     'Social platform',
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (x)=>twitter()));
+                },
               ),
             ),
             Padding(
