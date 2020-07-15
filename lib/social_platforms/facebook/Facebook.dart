@@ -51,7 +51,7 @@ class _FacebookLoginState extends State<Facebook_Login> {
 
   void initiateFacebookLogin() async {
     var facebookLoginResult =
-        await facebookLogin.logIn(["email", "public_profile", "user_friends"]);
+        await facebookLogin.logIn(["email", "public_profile"]);
 
     switch (facebookLoginResult.status) {
       case FacebookLoginStatus.error:
