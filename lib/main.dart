@@ -69,7 +69,15 @@ class _MyHomePageState extends State<MyHomePage> {
                     'Edu session',
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return JoinWidget();
+                      },
+                    ),
+                  );
+                },
               ),
             ),
           ],
