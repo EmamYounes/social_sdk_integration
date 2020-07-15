@@ -1,18 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:social_sdk_integration/social_platforms/SocialPlatforms.dart';
 
-void main() => runApp(MyApp());
+import 'SocialPlatFormScreen.dart';
+
+void main() => runApp(
+    MaterialApp(
+    home: MyApp(),
+    )
+    );
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Social sdk intergration',
+      title: 'Social sdk Integration',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Social sdk intergration'),
+      home: MyHomePage(title: 'Social sdk Integration'),
     );
   }
 }
@@ -35,6 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Padding(
@@ -49,10 +56,16 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Text(
                     'Social platform',
                   ),
+
                 ),
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => SocialPlatforms()));
+                },
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (context )=> SocialPlatFormScreen(),
+                  ));
                 },
               ),
             ),
