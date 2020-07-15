@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:social_sdk_integration/social_platforms/instgram/InstagramLogin.dart';
 
 import 'facebook/Facebook.dart';
 
@@ -83,7 +84,10 @@ class _SocialPlatformsState extends State<SocialPlatforms> {
                     'Instgram',
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => Instagram_Login()));
+                },
               ),
             ),
           ],
