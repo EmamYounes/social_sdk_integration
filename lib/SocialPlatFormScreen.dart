@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:social_sdk_integration/Twitter/twitter.dart';
 
 import 'Gmail/GoogleIntegrationScreen.dart';
 import 'Gmail/GooglePreview.dart';
@@ -13,7 +14,7 @@ class _SocialPlatFormScreenState extends State<SocialPlatFormScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green,
+      backgroundColor: Colors.white70,
       body: Container(
         child: Center(
           child: Column(
@@ -29,8 +30,12 @@ class _SocialPlatFormScreenState extends State<SocialPlatFormScreen> {
                 },
               ),
               RaisedButton(
-                child: Text(''),
-                onPressed: (){},
+                child: Text(' Twitter '),
+                onPressed: (){
+                  Navigator.pushReplacement(context, MaterialPageRoute(
+                      builder: (context) => twitter()
+                  ));
+                },
               ),
               RaisedButton(
                 child: Text(''),

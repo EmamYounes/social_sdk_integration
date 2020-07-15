@@ -24,8 +24,7 @@ class GooglePreviewState extends State<GooglePreview> {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-
-          const Text("Google integration Options." , style: TextStyle(color: Colors.white, fontSize: 30),),
+       //   const Text("Google integration Options." , style: TextStyle(color: Colors.blue, fontSize: 30),),
           RaisedButton(
             color: Colors.blue,
             child: const Text('Sign in ',style: TextStyle(color: Colors.white)),
@@ -35,7 +34,6 @@ class GooglePreviewState extends State<GooglePreview> {
           ),
           RaisedButton(
             color: Colors.blue,
-
             child: const Text('get Contacts of my email ',style: TextStyle(color: Colors.white)),
             onPressed: ()=>    Navigator.push(context, MaterialPageRoute(
                 builder: (context) => GoogleContactsScreen()
@@ -50,7 +48,7 @@ class GooglePreviewState extends State<GooglePreview> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(backgroundColor: Colors.redAccent,
+    return Scaffold(backgroundColor: Colors.yellow ,
         appBar: AppBar(
           title: const Text('Google Sign In'),
         ),
