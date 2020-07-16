@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:social_sdk_integration/social_platforms/SocialPlatforms.dart';
+import 'package:flutter/services.dart';
 
 import 'SocialPlatFormScreen.dart';
 
@@ -58,10 +58,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
 
                 ),
-                onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => SocialPlatforms()));
-                },
+//                onPressed: () {
+//                  Navigator.of(context).push(MaterialPageRoute(
+//                      builder: (context) => SocialPlatforms()));
+//                },
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(
                     builder: (context )=> SocialPlatFormScreen(),
@@ -83,13 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 onPressed: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return JoinWidget();
-                      },
-                    ),
-                  );
+                  openZoomApp();
                 },
               ),
             ),
@@ -97,5 +91,16 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
+  }
+
+  openZoomApp()async{
+    const platform = const MethodChannel('flutter.native/zoom');
+    String response = "";
+    try {
+      final String result = await platform.invokeMethod('openZoom');
+      response = result;
+    } on PlatformException catch (e) {
+      response = "Failed to Invoke: '${e.message}'.";
+    }
   }
 }

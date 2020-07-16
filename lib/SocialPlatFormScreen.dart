@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:social_sdk_integration/Twitter/twitter.dart';
+import 'package:social_sdk_integration/social_platforms/facebook/Facebook.dart';
+import 'package:social_sdk_integration/social_platforms/instgram/InstagramLogin.dart';
 
 import 'Gmail/GoogleIntegrationScreen.dart';
 import 'Gmail/GooglePreview.dart';
@@ -30,7 +32,7 @@ class _SocialPlatFormScreenState extends State<SocialPlatFormScreen> {
                 },
               ),
               RaisedButton(
-                child: Text(' Twitter '),
+                child: Text('Twitter'),
                 onPressed: (){
                   Navigator.pushReplacement(context, MaterialPageRoute(
                       builder: (context) => twitter()
@@ -38,12 +40,16 @@ class _SocialPlatFormScreenState extends State<SocialPlatFormScreen> {
                 },
               ),
               RaisedButton(
-                child: Text(''),
-                onPressed: (){},
+                child: Text('Instagram'),
+                onPressed: (){
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => Instagram_Login()));
+                    },
               ),
               RaisedButton(
-                child: Text(''),
-                onPressed: (){},
+                child: Text('Facebook'),
+                onPressed: (){ Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => Facebook_Login()));},
               ),
             ],
           ),

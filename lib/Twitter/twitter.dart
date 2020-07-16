@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_twitter_login/flutter_twitter_login.dart';
 import 'package:twitter_api/twitter_api.dart';
 
