@@ -9,6 +9,7 @@ Future<Token> getToken(String appId, String appSecret) async {
   Stream<String> onCode = await _server();
   String url =
       "https://api.instagram.com/oauth/authorize?client_id=$appId&redirect_uri=http://localhost:8585&response_type=code";
+  print("url=======> $url");
   final flutterWebviewPlugin = new FlutterWebviewPlugin();
   flutterWebviewPlugin.launch(url);
   final String code = await onCode.first;
