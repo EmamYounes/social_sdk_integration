@@ -4,7 +4,7 @@ we split them into category:
 1- social platforms like facebook, twitter, gmail, instagram
 2- platforms for video call like zoom
 
-======================================================
+                   ======================================================
 
 Zoom :
 1- first create your app on ==> https://marketplace.zoom.us/develop/create?source=devdocs
@@ -16,9 +16,8 @@ Zoom :
             //replace here your one 
             initParams.appKey = APP_KEY;
             //replace here your one 
-            initParams.appSecret =  APP_SECRET;
-     
-    }
-=====================================================================
+            initParams.appSecret =  APP_SECRET; }
+Here is our reference code https://github.com/zoom/zoom-sdk-android/tree/master/mobilertc-android-studio/sample
+                      =====================================================================
 
 
