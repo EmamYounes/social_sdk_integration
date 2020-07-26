@@ -45,5 +45,35 @@ openZoomApp()async{
     }
 Here is our reference code https://github.com/zoom/zoom-sdk-android/tree/master/mobilertc-android-studio/sample
 =====================================================================
+Google integration :- 
+
+Plugins : 
+-	We will use plugin google_sign_in 4.5.1 
+-	Add this line in pubspec.yaml 
+•	google_sign_in: ^4.5.1
+
+Android & IOS  integration  https://pub.dev/packages/google_sign_in#-readme-tab- 
+
+Android : 
+     1- create Project in firebase and fill all required fields .
+     2- get SHA1 and SHA256 => right click at gradlew -> open in Terminal and write
+ “ gradlew  signingReport “
+    3- download json file and put it in android project at app folder
+    4- open google developer  api console and fill Oauth consent screen
+    
+Twitter integration :- 
+
+Plugins : 
+-	We will use plugin flutter_twitter_login: 1.1.0
+-   and this for get info based on token and secret token twitter_api: 0.1.2
+-	Add these two lines in pubspec.yaml 
+
+Then :- 
+Create a project in a twitter developer dashboard https://developer.twitter.com/en
+after reviewing time you will receive an api key and an api secret key which you will use to login and open session for you 
+
+note :- you must make a refresh to your token
+
+    
 
 
