@@ -56,9 +56,11 @@ Android & IOS  integration  https://pub.dev/packages/google_sign_in#-readme-tab-
 
 Android : 
      - create Project in firebase and fill all required fields .
-     - get SHA1 and SHA256 => right click at gradlew -> open in Terminal and write
- “ gradlew  signingReport “
+  
+     - get SHA1 and SHA256 => right click at gradlew -> open in Terminal and write “ gradlew  signingReport “
+     
      - download json file and put it in android project at app folder
+     
      - open google developer  api console and fill Oauth consent screen
     
 Twitter integration :- 
