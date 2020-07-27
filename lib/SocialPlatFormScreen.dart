@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:social_sdk_integration/Bloc/LoginBloc.dart';
 import 'package:social_sdk_integration/social_platforms/facebook/Facebook.dart';
 import 'package:social_sdk_integration/social_platforms/instgram/InstagramLogin.dart';
 
