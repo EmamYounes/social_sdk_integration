@@ -5,7 +5,6 @@ import "package:http/http.dart" as http;
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:social_sdk_integration/Gmail/GoogleIntegrationScreen.dart';
-
 import 'GoogleGetContacts.dart';
 
 

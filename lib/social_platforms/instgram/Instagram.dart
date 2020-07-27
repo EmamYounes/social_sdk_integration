@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 import 'dart:io';
-
 import 'package:http/http.dart' as http;
 
 Future<Token> getToken(String appId, String appSecret) async {
@@ -25,6 +24,10 @@ Future<Token> getToken(String appId, String appSecret) async {
   return new Token.fromMap(json.decode(response.body));
 }
 
+/*
+*
+*
+* */
 Future<Stream<String>> _server() async {
   final StreamController<String> onCode = new StreamController();
   HttpServer server =

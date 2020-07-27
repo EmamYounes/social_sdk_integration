@@ -10,7 +10,9 @@ class twitter extends StatefulWidget {
 }
 
 class _MyAppState extends State<twitter> {
+
   String accessToken ;
+
   static final TwitterLogin twitterLogin = new TwitterLogin(
     consumerKey: 'RyrvFOOjlJfJASZODeoTwL8RR',
     consumerSecret: 'j4AyVa8IwbHEkvGUt6zcQbV5nL5W2g6394VVjcxpcEzqdb7GyR',

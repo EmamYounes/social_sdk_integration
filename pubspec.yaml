@@ -25,6 +25,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   google_sign_in: 4.5.1
   http: 0.12.1
+  font_awesome_flutter: ^8.5.0
   flutter_twitter_login: 1.1.0
   twitter_api: 0.1.2
   flutter_facebook_login: 3.0.0
@@ -33,6 +34,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
 
 
 # For information on the generic Dart part of this file, see the
@@ -45,6 +47,8 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  assets:
+    - assets/images/
 
   # To add assets to your application, add an assets section, like this:
   # assets:

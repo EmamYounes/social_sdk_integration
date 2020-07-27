@@ -25,34 +25,46 @@ class _FacebookLoginState extends State<Facebook_Login> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: Text("Facebook Login"),
-          actions: <Widget>[
-            IconButton(
-              icon: Icon(
-                Icons.exit_to_app,
-                color: Colors.white,
-              ),
-              onPressed: () => facebookLogin.isLoggedIn
-                  .then((isLoggedIn) => isLoggedIn ? _logout() : {}),
-            ),
-          ],
-        ),
-        body: Container(
-          child: Center(
-            child: isLoggedIn
-                ? _displayUserData(profileData)
-                : _displayLoginButton(),
-          ),
-        ),
+        appBar:buildAppBar(),
+        body:buildBody(),
       ),
     );
   }
 
+  Widget buildAppBar() {
+    return AppBar(
+      title: Text("Facebook Login"),
+      actions: <Widget>[
+        IconButton(
+          icon: Icon(
+            Icons.exit_to_app,
+            color: Colors.white,
+          ),
+          onPressed: () =>
+              facebookLogin.isLoggedIn
+                  .then((isLoggedIn) => isLoggedIn ? _logout() : {}),
+        ),
+      ],
+    );
+  }
+
+  Widget buildBody(){
+    return Container(
+      child: Center(
+        child: isLoggedIn
+            ? _displayUserData(profileData)
+            : _displayLoginButton(),
+      ),
+    );
+  }
+
+
+
+
+
   void initiateFacebookLogin() async {
     var facebookLoginResult =
         await facebookLogin.logIn(["email", "public_profile"]);
-
     switch (facebookLoginResult.status) {
       case FacebookLoginStatus.error:
         onLoginStatusChanged(false);
@@ -63,10 +75,8 @@ class _FacebookLoginState extends State<Facebook_Login> {
       case FacebookLoginStatus.loggedIn:
         var graphResponse = await http.get(
             'https://graph.facebook.com/v2.12/me?fields=name,first_name,last_name,email,picture.height(200)&access_token=${facebookLoginResult.accessToken.token}');
-
         var profile = json.decode(graphResponse.body);
         print(profile.toString());
-
         onLoginStatusChanged(true, profileData: profile);
         break;
     }
@@ -112,4 +122,5 @@ class _FacebookLoginState extends State<Facebook_Login> {
     onLoginStatusChanged(false);
     print("Logged out");
   }
+
 }

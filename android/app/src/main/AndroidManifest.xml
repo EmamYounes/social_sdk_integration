@@ -9,6 +9,7 @@
          additional functionality it is fine to subclass or reimplement
          FlutterApplication and put your custom class here. -->
     <application
+        android:installLocation="auto"
         android:name="io.flutter.app.FlutterApplication"
         android:label="social_sdk_integration"
         android:icon="@mipmap/ic_launcher">
@@ -24,6 +25,7 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
         <activity android:name="com.example.social_sdk_integration.zoom.ui.InitAuthSDKActivity"
             android:label="@string/this_app_name"
             android:configChanges="screenSize|orientation|keyboardHidden|keyboard"
@@ -119,10 +121,6 @@
         <activity android:name="com.example.social_sdk_integration.zoom.otherfeatures.MyCallMeByPhoneActivity"
             android:icon="@drawable/ic_launcher"
             android:theme="@style/ZMTheme.MainWindow" >
-            <!--            <intent-filter>
-                            <action android:name="us.zoom.sdkexample.intent.action.CallMyPhone" />
-                            <category android:name="android.intent.category.DEFAULT" />
-                        </intent-filter>-->
         </activity>
 
         <activity
