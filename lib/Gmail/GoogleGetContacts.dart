@@ -5,12 +5,14 @@ import "package:http/http.dart" as http;
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
+import '../strings.dart';
+
 
 
 GoogleSignIn _googleSignIn = GoogleSignIn(
   scopes: <String>[
     'email',
-    'https://www.googleapis.com/auth/contacts.readonly',
+    googleSignInApi,
   ],
 );
 
@@ -42,8 +44,7 @@ class GoogleContactsScreenState extends State<GoogleContactsScreen> {
       _contactText = "Loading contact info...";
     });
     final http.Response response = await http.get(
-      'https://people.googleapis.com/v1/people/me/connections'
-          '?requestMask.includeField=person.names',
+      googleConnectionsApi,
       headers: await _currentUser.authHeaders,
     );
     if (response.statusCode != 200) {

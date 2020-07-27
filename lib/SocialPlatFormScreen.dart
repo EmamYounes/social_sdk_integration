@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:social_sdk_integration/Bloc/LoginBloc.dart';
 import 'package:social_sdk_integration/Twitter/twitter.dart';
 import 'package:social_sdk_integration/social_platforms/facebook/Facebook.dart';
 import 'package:social_sdk_integration/social_platforms/instgram/InstagramLogin.dart';
@@ -35,7 +37,9 @@ class _SocialPlatFormScreenState extends State<SocialPlatFormScreen> {
                 child: Text('Twitter'),
                 onPressed: (){
                   Navigator.pushReplacement(context, MaterialPageRoute(
-                      builder: (context) => twitter()
+                      builder: (context) => BlocProvider<LoginBloc>(
+                          create: (_)=>LoginBloc(),
+                          child: twitter())
                   ));
                 },
               ),

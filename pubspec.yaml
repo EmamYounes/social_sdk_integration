@@ -29,7 +29,7 @@ dependencies:
   twitter_api: 0.1.2
   flutter_facebook_login: 3.0.0
   flutter_webview_plugin: 0.3.11
-
+  flutter_bloc: ^3.0.1
 dev_dependencies:
   flutter_test:
     sdk: flutter
