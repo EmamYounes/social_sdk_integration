@@ -21,3 +21,10 @@ List<String> mediaFields = [
   'username',
   'timestamp'
 ];
+const String googleSignInApi = 'https://www.googleapis.com/auth/contacts.readonly';
+const String googleConnectionsApi = 'https://people.googleapis.com/v1/people/me/connections'
+    '?requestMask.includeField=person.names';
+const String twitterKey = 'RyrvFOOjlJfJASZODeoTwL8RR';
+const String twitterInfoApi = 'account/verify_credentials.json';
+const String twitterSecretKey = 'j4AyVa8IwbHEkvGUt6zcQbV5nL5W2g6394VVjcxpcEzqdb7GyR';
+const String twitterProfilePictureTag = "profile_image_url";

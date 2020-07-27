@@ -83,7 +83,9 @@ class _SocialPlatFormScreenState extends State<SocialPlatFormScreen> {
                       ),
                       onTap: (){
                         Navigator.pushReplacement(context, MaterialPageRoute(
-                            builder: (context) => twitter()
+                            builder: (context) => BlocProvider<LoginBloc>(
+                                create: (_)=>LoginBloc(),
+                                child: twitter())
                         ));
                       },
                     ),
